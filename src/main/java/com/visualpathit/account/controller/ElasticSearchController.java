@@ -1,9 +1,8 @@
 package com.visualpathit.account.controller;
 
-import java.io.IOException;
-import java.util.List;
-
-import org.apache.http.HttpHost;
+import com.visualpathit.account.model.User;
+import com.visualpathit.account.service.UserService;
+import com.visualpathit.account.utils.ElasticsearchUtil;
 import org.elasticsearch.action.delete.DeleteRequest;
 import org.elasticsearch.action.delete.DeleteResponse;
 import org.elasticsearch.action.get.GetRequest;
@@ -14,7 +13,6 @@ import org.elasticsearch.action.update.UpdateRequest;
 import org.elasticsearch.action.update.UpdateResponse;
 import org.elasticsearch.client.RequestOptions;
 import org.elasticsearch.client.RestHighLevelClient;
-import org.elasticsearch.common.xcontent.XContentBuilder;
 import org.elasticsearch.common.xcontent.XContentFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -23,9 +21,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.visualpathit.account.model.User;
-import com.visualpathit.account.service.UserService;
-import com.visualpathit.account.utils.ElasticsearchUtil;
+import java.io.IOException;
+import java.util.List;
 
 @Controller
 public class ElasticSearchController {

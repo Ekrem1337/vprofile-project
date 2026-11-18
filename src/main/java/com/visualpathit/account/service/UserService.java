@@ -1,16 +1,25 @@
 package com.visualpathit.account.service;
 
-import java.util.List;
-
 import com.visualpathit.account.model.User;
 
-/** {@author imrant}!*/
+import java.util.List;
+
+/**
+ * {@author imrant}!
+ */
 public interface UserService {
-	/** {@inheritDoc}} !*/
+    /**
+     * {@inheritDoc}} !
+     */
     void save(User user);
-    /** {@inheritDoc}} !*/
+
+    /**
+     * {@inheritDoc}} !
+     */
     User findByUsername(String username);
+
     User findById(long id);
+
     /*public void updateUser(User user);*/
-    public List <User> getList();
+    public List<User> getList();
 }

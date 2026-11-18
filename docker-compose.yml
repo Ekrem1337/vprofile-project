@@ -1,0 +1,40 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Docker-files/app/Dockerfile
+    image: ekremdev888/vprofile-app
+    container_name: vproapp
+    ports:
+      - "8080:8080"
+  db:
+    build:
+      context: ./Docker-files/db
+    image: ekremdev888/vprofile-db
+    container_name: vprodb
+    volumes:
+      - vprodata:/var/lib/mqsql
+    ports:
+      - "3307:3306"
+  web:
+    build: Docker-files/web
+    image: ekremdev888/vprofile-web
+    container_name: vproweb
+    ports:
+      - "3000:80"
+  vprocache01:
+    image: memcached
+    container_name: vprocache01
+    ports:
+      - "11211:11211"
+  vpromq01:
+    image: rabbitmq
+    container_name: vpromq01
+    environment:
+      - RABBITMQ_DEFAULT_USER=guest
+      - RABBITMQ_DEFAULT_PASS=guest
+    ports:
+      - "5672:5672"
+
+volumes:
+  vprodata: {}

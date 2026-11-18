@@ -15,7 +15,9 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.HashSet;
 import java.util.Set;
 
-/** {@author imrant} !*/
+/**
+ * {@author imrant} !
+ */
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
     @Autowired

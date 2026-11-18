@@ -1,8 +1,12 @@
 package com.visualpathit.account.service;
 
-/** method for finding already added user !*/
+/**
+ * method for finding already added user !
+ */
 public interface SecurityService {
-	/** {@inheritDoc}} !*/
+    /**
+     * {@inheritDoc}} !
+     */
     String findLoggedInUsername();
 
     boolean autologin(String username, String password);

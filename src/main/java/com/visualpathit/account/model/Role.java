@@ -3,17 +3,29 @@ package com.visualpathit.account.model;
 import jakarta.persistence.*;
 
 import java.util.Set;
-/**{@author imrant} !*/
+
+/**
+ * {@author imrant} !
+ */
 @Entity
 @Table(name = "role")
 public class Role {
-	/** the id field !*/
+    /**
+     * the id field !
+     */
     private Long id;
-    /** the name field !*/
+    /**
+     * the name field !
+     */
     private String name;
-    /** the user field !*/
+    /**
+     * the user field !
+     */
     private Set<User> users;
-    /** {@inheritDoc}} !*/
+
+    /**
+     * {@inheritDoc}} !
+     */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     /**
@@ -22,34 +34,46 @@ public class Role {
     public Long getId() {
         return id;
     }
-    /** {@inheritDoc}} !*/
-    public  void setId(final Long id) {
+
+    /**
+     * {@inheritDoc}} !
+     */
+    public void setId(final Long id) {
         this.id = id;
     }
+
     /**
      * {@link Role#name}
-     !*/
+     * !
+     */
     public String getName() {
         return name;
     }
-    /** {@inheritDoc}} !*/
-    public  void setName(final String name) {
+
+    /**
+     * {@inheritDoc}} !
+     */
+    public void setName(final String name) {
         this.name = name;
     }
+
     /**
-     * {@inheritDoc}} 
-     !*/
-    @ManyToMany(fetch = FetchType.EAGER, mappedBy = "roles",cascade = CascadeType.ALL)
+     * {@inheritDoc}}
+     * !
+     */
+    @ManyToMany(fetch = FetchType.EAGER, mappedBy = "roles", cascade = CascadeType.ALL)
     /**
      * {@link Role#id}
      !*/
-    public Set <User> getUsers() {
+    public Set<User> getUsers() {
         return users;
     }
+
     /**
-     * {@inheritDoc}} 
-     !*/
-    public final void setUsers(Set<User> users) {
+     * {@inheritDoc}}
+     * !
+     */
+    public void setUsers(Set<User> users) {
         this.users = users;
     }
 }
